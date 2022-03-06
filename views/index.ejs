@@ -1,0 +1,70 @@
+<%- include("partials/head") %> 
+
+<div class="nav">
+    <div class="header">
+        <h1>HOLDLINFO</h1>
+        <p>Powered By <span>Finstreet</span></p>
+    </div>
+    <div class="mid">
+        <button>INR</button>
+        <button>BTC</button>
+        <button>Buy BTC</button>
+    </div>
+    <div class="right">
+        <div class="timer">30</div>
+        <button>
+            <img src="/telegram.png" height="20px">
+            Connect Telegram
+        </button>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Last</th>
+            <th>Buy/Sell Price</th>
+            <th>Volume</th>
+            <th>Base_Unit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(val in arr){ %>
+            <tr class="item">
+                <td class="first"><%= indx++ %></td>
+                <td><%= arr[val]["name"] %></td>
+                <td><%= arr[val]["last"] %></td>
+                <td><%= arr[val]["buy"] %></td>
+                <td><%= arr[val]["volume"] %></td>
+                <td class="last"><%= arr[val]["base_unit"] %></td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+
+<!-- Footer -->
+<div class="foot">
+    <div class="foot-top">
+        <div class="left">
+            <div>Copyright 2022</div>
+            <div>HoldlIinfo.com</div>
+            <div>Developed By <span> <a href="https://github.com/anonymous372">@anonymous372</a></span></div>
+        </div>
+        <div>
+            Suupport
+        </div>
+    </div>
+    <div class="foot-bottom">
+        <button>
+            Add HoldInfo to Home Screen
+        </button>
+    </div>
+</div>
+
+<%- include("partials/foot") %> 
